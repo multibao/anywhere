@@ -6,14 +6,12 @@ Anywhere = {
   version: '0.3',
   config: { 'default': {} }
 };
-
 /**
 * Add marked to included scripts.
 */
 var script = document.createElement('script');
 script.src = 'https://cdn.rawgit.com/chjj/marked/master/marked.min.js';
 document.head.appendChild(script);
-
 /**
 * DOMWrapper is a wrapper for a DOM node to enpower its methods.
 */
@@ -107,16 +105,13 @@ var GithubExtractor = (function () {
   return GithubExtractor;
 })();
 
-;
-
 /**
 * Wait for the DOM to be loaded, detect all 'data-anywhere' attributes and
 * load their content.
 * Also allow the `update()` method
 */
 window.addEventListener('load', function (event) {
-  var config = Anywhere.config['default'];
-  [].forEach.call(document.querySelectorAll('[data-anywhere]'), function (node) {
+  var config = Anywhere.config['default'];[].forEach.call(document.querySelectorAll('[data-anywhere]'), function (node) {
     config.filename = node.attributes['data-anywhere'].value;
     var extractor = new GithubExtractor(config);
     var nodeObj = new DOMWrapper(node);
@@ -124,7 +119,6 @@ window.addEventListener('load', function (event) {
     extractor.getContentFromFile(function (r) {
       nodeObj.updateFromMarkdown(r);
     });
-
     // When update() is invoqued on the node, update the content.
     node.update = function () {
       extractor.config.filename = node.attributes['data-anywhere'].value;
