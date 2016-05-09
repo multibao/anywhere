@@ -1,3 +1,9 @@
+---
+title: Code opensource techno Anywhere
+description: Contribuez ou détournez le code de la technologie Anywhere, qui vous permet de faire apparaître et de synchroniser n'importe quelle ressource de multiBàO sur votre site.
+image_url: https://github.com/multibao/contributions/blob/master/media/emilio_quantina-cc-by-nc-sa.jpg?raw=true
+---
+
 # Anywhere JS
 
 Makes your HTML content easily editable from Github in Markdown.
